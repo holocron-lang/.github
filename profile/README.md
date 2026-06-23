@@ -34,8 +34,11 @@ type* are all caught at build time, never at runtime.
 
 | Repo | What it is |
 |---|---|
-| **[holocron](https://github.com/holocron-lang/holocron)** | The compiler — CLI + LSP server, written in Rust. |
-| _coming soon_ | Editor extensions (Zed, VS Code), Homebrew tap, language reference. |
+| **[holocron](https://github.com/holocron-lang/holocron)** | The compiler core — parser, catalog, resolver, type-checker, SQL emitter; ships the `holocron` CLI. Written in Rust. |
+| **[holocron-lsp](https://github.com/holocron-lang/holocron-lsp)** | The Language Server. Live diagnostics for `.holocron.yaml` over standard LSP. |
+| **[zed-holocron](https://github.com/holocron-lang/zed-holocron)** | [Zed](https://zed.dev) editor extension — wires `holocron-lsp` into Zed. |
+| **[vscode-holocron](https://github.com/holocron-lang/vscode-holocron)** | VS Code / Cursor extension — wires `holocron-lsp` over LSP. |
+| **[homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron)** | Homebrew tap with formulas for the CLI and the LSP. |
 
 ## Quick start
 
@@ -59,7 +62,7 @@ for working schemas — and error samples that demonstrate every diagnostic.
 
 🚧 **Active development.** The compiler pipeline (parse → catalog →
 resolve → check → emit) is working end-to-end for PostgreSQL DDL, with
-rich rustc-style diagnostics underlining the exact YAML token at fault.
-The LSP server gives live in-editor squiggles. Still in flight:
-error-collection (currently bail-on-first), DML emit for queries, and
+rich rustc-style diagnostics underlining the exact YAML token at fault
+and reporting every error in a file in one pass. The LSP server gives
+live in-editor squiggles. Still in flight: DML emit for queries, and
 the RSQL parser.
