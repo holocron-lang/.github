@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest a feature or improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: |
+        What problem are you trying to solve? Concrete use cases beat
+        abstract requests.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: |
+        How would this work from a user's perspective? If you have a
+        sketch of the YAML / API / CLI shape, paste it here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: |
+        Have you tried workarounds? What about them isn't enough?
+    validations:
+      required: false

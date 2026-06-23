@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/holocron-lang/holocron/security/advisories/new
+    about: Please report security issues privately via GitHub's vulnerability reporting, not as a public issue.
+  - name: Question / Discussion
+    url: https://github.com/holocron-lang/holocron/discussions
+    about: Open-ended questions, design discussions, "how do I…" go in Discussions.
